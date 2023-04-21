@@ -8,7 +8,31 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="card-container"></div>
+    <div style="position: relative; z-index: auto; height: 100%">
+      <div class="header">
+        <button id="add-book">Add Book</button>
+      </div>
+      <div class="card-container"></div>
+      <form id="book-form" action="" method="post">
+        <div>
+          <label for="book-name">Book Name</label>
+          <input type="text" name="book-name" id="book-name" required />
+        </div>
+        <div>
+          <label for="author">Author</label>
+          <input type="text" name="author" id="author" required />
+        </div>
+        <div>
+          <label for="pages">Pages</label>
+          <input type="text" name="pages" id="pages" required />
+        </div>
+        <div>
+          <label for="book-read">Book Read</label>
+          <input type="text" name="book-read" id="book-read" required />
+        </div>
+        <button type="submit">Submit Book</button>
+      </form>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
