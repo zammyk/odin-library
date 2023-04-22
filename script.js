@@ -5,7 +5,11 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
+  this.bookId = Book.prototype.count;
+  Book.prototype.count += 1;
 }
+
+Book.prototype.count = 0;
 
 function addBookToLibrary(title, author, pages, read) {
   const newBook = new Book(title, author, pages, read);
@@ -18,19 +22,40 @@ function removeAllChild(node) {
   }
 }
 
+function deleteBook() {
+  const removeBookId = this.id.substring(12);
+  cardContainer.removeChild(document.getElementById("book-" + removeBookId));
+  for (let i = 0; i < myLibrary.length; i++) {
+    if (myLibrary[i].bookId == removeBookId) {
+      myLibrary.splice(i, 1);
+      return;
+    }
+  }
+}
+
 function displayBook(book) {
   const bookCard = document.createElement("div");
+  bookCard.id = "book-" + book.bookId;
   bookCard.classList.add("book-card");
+
   const cardTitle = document.createElement("div");
   cardTitle.textContent = book.title;
+
   const cardAuthor = document.createElement("div");
   cardAuthor.textContent = book.author;
+
   const cardPages = document.createElement("div");
   cardPages.textContent = book.pages;
+
   const readButton = document.createElement("button");
   readButton.textContent = book.read;
+  readButton.id = "read-book-" + book.bookId;
+
   const removeButton = document.createElement("button");
+  removeButton.addEventListener("click", deleteBook);
   removeButton.textContent = "REMOVE BOOK";
+  removeButton.id = "remove-book-" + book.bookId;
+
   bookCard.appendChild(cardTitle);
   bookCard.appendChild(cardAuthor);
   bookCard.appendChild(cardPages);
