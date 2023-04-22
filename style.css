@@ -35,6 +35,14 @@ body {
   justify-content: space-around;
 }
 
+.book-card .read:after {
+  content: "READ";
+}
+
+.book-card .unread:after {
+  content: "UNREAD";
+}
+
 #book-form {
   position: absolute;
   z-index: -1;

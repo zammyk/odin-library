@@ -22,6 +22,16 @@ function removeAllChild(node) {
   }
 }
 
+function switchState() {
+  if (this.classList.contains("read")) {
+    this.classList.remove("read");
+    this.classList.add("unread");
+  } else {
+    this.classList.remove("unread");
+    this.classList.add("read");
+  }
+}
+
 function deleteBook() {
   const removeBookId = this.id.substring(12);
   cardContainer.removeChild(document.getElementById("book-" + removeBookId));
@@ -48,8 +58,9 @@ function displayBook(book) {
   cardPages.textContent = book.pages;
 
   const readButton = document.createElement("button");
-  readButton.textContent = book.read;
+  readButton.classList.add("read");
   readButton.id = "read-book-" + book.bookId;
+  readButton.addEventListener("click", switchState);
 
   const removeButton = document.createElement("button");
   removeButton.addEventListener("click", deleteBook);
