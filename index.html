@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div
@@ -13,14 +17,14 @@
         position: relative;
         z-index: auto;
         height: 100%;
-        background-color: white;
+        background-color: #f4eee0;
       "
     >
       <div class="header">
         <button id="add-book">Add Book</button>
       </div>
       <div class="card-container"></div>
-      <form id="book-form" action="" method="post">
+      <form id="book-form" action="" method="post" class="center-absolute">
         <div>
           <label for="book-name">Book Name</label>
           <input type="text" name="book-name" id="book-name" required />
@@ -34,8 +38,25 @@
           <input type="text" name="pages" id="pages" required />
         </div>
         <div>
-          <label for="book-read">Book Read</label>
-          <input type="text" name="book-read" id="book-read" required />
+          <span>Book Read</span>
+          <div>
+            <input
+              type="radio"
+              id="book-read"
+              name="book-read-status"
+              value="read"
+            />
+            <label for="book-read">READ</label><br />
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="book-unread"
+              name="book-read-status"
+              value="unread"
+            />
+            <label for="book-unread">NOT READ</label><br />
+          </div>
         </div>
         <button type="submit">Submit Book</button>
       </form>

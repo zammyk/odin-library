@@ -58,7 +58,7 @@ function displayBook(book) {
   cardPages.textContent = book.pages;
 
   const readButton = document.createElement("button");
-  readButton.classList.add("read");
+  readButton.classList.add(book.read == "read" ? "read" : "unread");
   readButton.id = "read-book-" + book.bookId;
   readButton.addEventListener("click", switchState);
 
@@ -81,7 +81,7 @@ const cardContainer = document.querySelector(".card-container");
 const inputBookName = document.getElementById("book-name");
 const inputAuthor = document.getElementById("author");
 const inputPages = document.getElementById("pages");
-const inputBookRead = document.getElementById("book-read");
+const inputBookRead = document.getElementsByName("book-read-status");
 
 const addBookButton = document.getElementById("add-book");
 
@@ -94,7 +94,10 @@ form.addEventListener("submit", function (e) {
   let bookName = inputBookName.value;
   let author = inputAuthor.value;
   let pages = inputPages.value;
-  let bookRead = inputBookRead.value;
+  let bookRead;
+  inputBookRead.forEach((radioButtonInput) => {
+    if (radioButtonInput.checked) bookRead = radioButtonInput.value;
+  });
   if (!(bookName === "" || author === "" || pages === "" || bookRead === "")) {
     addBookToLibrary(bookName, author, pages, bookRead);
     form.classList.remove("active");
