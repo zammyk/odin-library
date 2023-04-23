@@ -99,7 +99,8 @@ body {
   align-items: center;
 }
 
-#book-form input[type="text"] {
+#book-form input[type="text"],
+#book-form input[type="number"] {
   border: solid;
   border-width: 2px;
   border-radius: 10px;
