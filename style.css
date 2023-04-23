@@ -29,6 +29,10 @@ body {
   position: fixed;
   z-index: 1;
   background-color: #393646;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
 }
 
 .card-container {
