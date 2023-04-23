@@ -63,10 +63,12 @@ body {
 
 .book-card .read:after {
   content: "READ";
+  color: green;
 }
 
 .book-card .unread:after {
   content: "UNREAD";
+  color: red;
 }
 
 #book-form {

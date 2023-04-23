@@ -49,13 +49,13 @@ function displayBook(book) {
   bookCard.classList.add("book-card");
 
   const cardTitle = document.createElement("div");
-  cardTitle.textContent = book.title;
+  cardTitle.textContent = '"' + book.title + '"';
 
   const cardAuthor = document.createElement("div");
   cardAuthor.textContent = book.author;
 
   const cardPages = document.createElement("div");
-  cardPages.textContent = book.pages;
+  cardPages.textContent = book.pages + " pages";
 
   const readButton = document.createElement("button");
   readButton.classList.add(book.read == "read" ? "read" : "unread");
