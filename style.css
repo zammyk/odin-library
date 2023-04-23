@@ -6,7 +6,7 @@ body {
 }
 
 * {
-  font-family: "Cardo", serif;
+  font-family: "Oswald", sans-serif;
 }
 
 h1,
@@ -38,9 +38,12 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: 200px;
+  row-gap: 10px;
+  column-gap: 10px;
   position: absolute;
-  background-color: #f4eee0;
+  background-color: rgb(220, 220, 220);
   z-index: auto;
+  padding: 20px;
 }
 
 .book-card {
@@ -49,6 +52,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  background-color: #6d5d6e;
+  border-radius: 10px;
+  border: solid black 2px;
 }
 
 .book-card .read:after {
@@ -83,6 +89,7 @@ body {
 #book-form > div > div {
   display: flex;
   justify-content: center;
+  gap: 10px;
   align-items: center;
 }
 
@@ -91,7 +98,7 @@ body {
   border-width: 2px;
   border-radius: 10px;
   width: 300px;
-  background-color: #f4eee0;
+  background-color: rgb(220, 220, 220);
 }
 
 #book-form button {
