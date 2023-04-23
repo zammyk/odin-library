@@ -13,7 +13,7 @@ body {
   height: 100px;
   width: 100%;
   position: fixed;
-  z-index: 100;
+  z-index: 1;
   background-color: aqua;
 }
 
@@ -53,5 +53,5 @@ body {
 }
 
 .active {
-  z-index: 1 !important;
+  z-index: 10 !important;
 }
